@@ -1,27 +1,43 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {firestore} from "../Firebase"
+import { firestore } from "../Firebase";
 
 const Home = () => {
+  const [tweets, setTweets] = useState([]);
 
-    useEffect(()=>{
-        firestore
-          .collection("tweets")
-          .get()
-          .then(snapshot =>{
-            snapshot.forEach(doc=>{
-              console.log(doc.data());
-            })
-          })
-      })
-    return (
-        <div>
-            <h1>
-                Devs United
-            </h1>
-            
-        </div>
-    )
-}
+  const getTweets = () => {
+    firestore
+      .collection("tweets")
+      .get()
+      .then((snapshot) => {
+        const tweets = snapshot.docs.map((doc) => {
+          return {
+            message: doc.data().message,
+            user: doc.data().user,
+            id: doc.id
+          };
+        });
+        setTweets(tweets);
+      });
+  };
+  useEffect(() => {
+    getTweets();
+  }, []);
 
-export default Home
+  return (
+    <div>
+      Devs United
+      {tweets.map((tweet,id) => {
+        return (
+          <div key={tweet.id}>
+            <p>{tweet.user}</p>
+            <p>{tweet.message}</p>
+            <hr/>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+export default Home;
