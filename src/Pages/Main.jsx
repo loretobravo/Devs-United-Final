@@ -4,6 +4,8 @@ import Login from "./Login";
 import MyProfile from "./MyProfile";
 import {Home} from "./Home";
 import App from "../App";
+import MyFavs from "../Components/MyFavs"
+import MyTweets from "../Components/MyTweets"
 
 const Main = () => {
   return (
@@ -12,6 +14,8 @@ const Main = () => {
           <Route exact path="/" element={<Login/>} />
         <Route path="/Home" element={<Home/>} />
         <Route path="/MyProfile" element={<MyProfile />} />
+        <Route path="/MyFavs" element={<MyFavs />} />
+        <Route path="/MyTweets" element={<MyTweets />} />
        
         
       </Routes>

@@ -12,7 +12,7 @@ const GoogleLogin = () => {
        auth.onAuthStateChanged((user)=>{
            setUser(user);
                });
-               console.log(user)
+              //  console.log(user)
             },[]);
     return (
         <div>

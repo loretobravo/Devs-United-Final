@@ -9,7 +9,7 @@ const Tweets = () => {
 
   const deleteTweet = (id) => {
     // borramos el tweet en firebase
-    console.log(id)
+    // console.log(id)
      firestore.doc(`tweets/${id}`)
      .delete()
      .then(()=> console.log("borrado exitosamente"))
@@ -58,8 +58,6 @@ const Tweets = () => {
      }
 
    }
-
-
  
     return (
         <div>

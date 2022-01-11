@@ -29,7 +29,7 @@ const SubmitTweet = () => {
             likedBy: doc.data().likedBy
           };
         });
-        console.log(tweets);
+        // console.log(tweets);
         setTweets(tweets);
       });
     return () => desuscribir();
@@ -44,7 +44,7 @@ const SubmitTweet = () => {
       autor: user.displayName,
       likedBy: []
     };
-    console.log(newTweet)
+    // console.log(newTweet)
     setBody(newTweet);
   };
 
