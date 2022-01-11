@@ -1,43 +1,36 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { firestore } from "../Firebase";
+import React, { useEffect, useState,useContext } from "react";
+import { Navigate, Link } from "react-router-dom";
+import Tweets from "../Components/Tweets"
+import SubmitTweet from "../Components/SubmitTweet";
+import { auth,loginGoogle,logout} from '../Firebase';
+import {AppContext} from "../Context/AppContext";
+import GoogleLogin from "../Components/GoogleLogin";
 
-const Home = () => {
-  const [tweets, setTweets] = useState([]);
+ export const Home = () => {
+  const {user,setUser}= useContext(AppContext);
 
-  const getTweets = () => {
-    firestore
-      .collection("tweets")
-      .get()
-      .then((snapshot) => {
-        const tweets = snapshot.docs.map((doc) => {
-          return {
-            message: doc.data().message,
-            user: doc.data().user,
-            id: doc.id
-          };
-        });
-        setTweets(tweets);
-      });
-  };
-  useEffect(() => {
-    getTweets();
-  }, []);
 
-  return (
-    <div>
-      Devs United
-      {tweets.map((tweet,id) => {
-        return (
-          <div key={tweet.id}>
-            <p>{tweet.user}</p>
-            <p>{tweet.message}</p>
-            <hr/>
-          </div>
-        );
-      })}
-    </div>
-  );
-};
+  if (!user) return <Navigate to ="/"/>
+return (
+<div>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Login</Link>
+          </li>
+          <li>
+            <Link to="/Home">Home</Link>
+          </li>
+          <li>
+            <Link to="/MyProfile">MyProfile</Link>
+          </li>
+         
+        </ul>
+      </nav>
+      <GoogleLogin/>
+<SubmitTweet/> 
+<button onClick={logout}>Log out</button>
 
-export default Home;
+
+  </div>
+)};
