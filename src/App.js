@@ -7,6 +7,7 @@ import Main  from "./Pages/Main";
 import Login from "./Pages/Login";
 import {Home} from "./Pages/Home";
 import MyProfile from "./Pages/MyProfile";
+import TweetsHelpers from "../src/Components/TweetsHelpers"
 
 
 function App() {

@@ -4,7 +4,7 @@ import {AppContext} from "../Context/AppContext";
 import Tweets from "./Tweets";
 import Tweet from "./Tweet"
 
-const SubmitTweet = () => {
+const SubmitTweet = ({deleteTweet,likeTweet, dislikeTweet}) => {
 
   const {user, setUser, tweets,setTweets}= useContext(AppContext);
     const [body, setBody] = useState({
@@ -78,7 +78,11 @@ const SubmitTweet = () => {
 
           </div>
         </form>
-        <Tweets/>
+        <Tweets
+        deleteTweet={deleteTweet}
+        likeTweet={likeTweet}
+        dislikeTweet={dislikeTweet}
+        />
     
     </div>
   );
