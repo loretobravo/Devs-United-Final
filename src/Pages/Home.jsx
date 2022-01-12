@@ -13,6 +13,7 @@ import GoogleLogin from "../Components/GoogleLogin";
   if (!user) return <Navigate to ="/"/>
 return (
 <div>
+  
       <nav>
         <ul>
           <li>
@@ -28,8 +29,10 @@ return (
         </ul>
       </nav>
       <GoogleLogin/>
+      <button onClick={logout}>Log out</button>
+      
 <SubmitTweet/> 
-<button onClick={logout}>Log out</button>
+
 
 
   </div>
