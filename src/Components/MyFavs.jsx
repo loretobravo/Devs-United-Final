@@ -6,9 +6,9 @@ import Tweet from "./Tweet"
 import SubmitTweet from "./SubmitTweet";
 import { Navigate, Link } from "react-router-dom";
 
-const MyFavs = ({deleteTweet,likeTweet, dislikeTweet}) => {
+const MyFavs = () => {
 
-    const {tweets,setTweets, user,setUser}= useContext(AppContext);
+    const {tweets,setTweets, user,setUser, deleteTweet, showLikes, likeTweet,dislikeTweet}= useContext(AppContext);
 
 //   const deleteTweet = (id) => {
 //     // borramos el tweet en firebase
@@ -40,27 +40,27 @@ const MyFavs = ({deleteTweet,likeTweet, dislikeTweet}) => {
 //    };
 
 
-   const showLikes = (tweet)=>{
-     if (tweet.likedBy && user.email){
-       const isLiked = tweet.likedBy.findIndex((liked)=> user.email === liked);
-       if (isLiked < 0){
-         return (
-           <>
-            <button onClick={() => likeTweet(tweet)}>Like</button>
-            </>
-         )
-       }
-       else {
-         return (
-           <>
- <button onClick={() => dislikeTweet(tweet)}>disLike</button>
-           </>
-         )
-       }
+//    const showLikes = (tweet)=>{
+//      if (tweet.likedBy && user.email){
+//        const isLiked = tweet.likedBy.findIndex((liked)=> user.email === liked);
+//        if (isLiked < 0){
+//          return (
+//            <>
+//             <button onClick={() => likeTweet(tweet)}>Like</button>
+//             </>
+//          )
+//        }
+//        else {
+//          return (
+//            <>
+//  <button onClick={() => dislikeTweet(tweet)}>disLike</button>
+//            </>
+//          )
+//        }
 
-     }
+//      }
 
-   }
+//    }
    return (
     <div>
          <Link to="/">Back to Home</Link>

@@ -4,9 +4,9 @@ import { firestore } from "../Firebase";
 import {AppContext} from "../Context/AppContext";
 
 
-const Tweets = ({deleteTweet,likeTweet, dislikeTweet}) => {
+const Tweets = () => {
 
-  const {tweets,setTweets, user,setUser}= useContext(AppContext);
+  const {tweets,setTweets, user,setUser, deleteTweet, showLikes, likeTweet,dislikeTweet}= useContext(AppContext);
 
 //   const deleteTweet = (id) => {
 //     // borramos el tweet en firebase
@@ -38,27 +38,27 @@ const Tweets = ({deleteTweet,likeTweet, dislikeTweet}) => {
 //    };
 
 
-   const showLikes = (tweet)=>{
-     if (tweet.likedBy && user.email){
-       const isLiked = tweet.likedBy.findIndex((liked)=> user.email === liked);
-       if (isLiked < 0){
-         return (
-           <>
-            <button onClick={() => likeTweet(tweet)}>Like</button>
-            </>
-         )
-       }
-       else {
-         return (
-           <>
- <button onClick={() => dislikeTweet(tweet)}>disLike</button>
-           </>
-         )
-       }
+//    const showLikes = (tweet)=>{
+//      if (tweet.likedBy && user.email){
+//        const isLiked = tweet.likedBy.findIndex((liked)=> user.email === liked);
+//        if (isLiked < 0){
+//          return (
+//            <>
+//             <button onClick={() => likeTweet(tweet)}>Like</button>
+//             </>
+//          )
+//        }
+//        else {
+//          return (
+//            <>
+//  <button onClick={() => dislikeTweet(tweet)}>disLike</button>
+//            </>
+//          )
+//        }
 
-     }
+//      }
 
-   }
+//    }
  
     return (
         <div>
@@ -68,7 +68,7 @@ const Tweets = ({deleteTweet,likeTweet, dislikeTweet}) => {
                    
             <div key={tweet.id}>
               <h2>{tweet.tweet}</h2>
-              <h4>{tweet.email}</h4>
+              {/* <h4>{tweet.email}</h4> */}
               <h4>by: {tweet.autor}</h4>
               <h4>{tweet.likedBy.length}</h4>
            

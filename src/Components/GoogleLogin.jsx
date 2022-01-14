@@ -2,6 +2,7 @@ import React, {useContext, useEffect} from "react";
 import { Navigate, Link } from "react-router-dom";
 import { auth,loginGoogle,logout} from '../Firebase';
 import {AppContext} from "../Context/AppContext";
+import "./googleLogin.css"
 
 
 const GoogleLogin = () => {
@@ -12,7 +13,7 @@ const GoogleLogin = () => {
        auth.onAuthStateChanged((user)=>{
            setUser(user);
                });
-              //  console.log(user)
+               
             },[]);
     return (
         <div>
@@ -25,9 +26,12 @@ const GoogleLogin = () => {
           </div>
         
       ) : (
-        <button  onClick={loginGoogle}>
-          Login con google
+        <div className="loginGoogle">
+          <img src="./svgs/logo.svg" alt="logo" className="logo" />
+        <button className="loginbutton" onClick={loginGoogle}>
+          Sign in with google
         </button>
+        </div>
       )}
         </div>
     );

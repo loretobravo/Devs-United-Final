@@ -7,7 +7,7 @@ import {AppContext} from "../Context/AppContext";
 import GoogleLogin from "../Components/GoogleLogin";
 
  export const Home = () => {
-  const {user,setUser}= useContext(AppContext);
+  const {tweets,setTweets, user,setUser, deleteTweet, showLikes, likeTweet,dislikeTweet}= useContext(AppContext);
 
 
   if (!user) return <Navigate to ="/"/>

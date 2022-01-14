@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  .loginGoogle {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      align-content: center;
+      background-color: rgba(46, 19, 44, 1);
+      width: 100vw;
+      height: 100vh;
+
+  }
+  .loginbutton{
+      background-color: rgba(66, 133, 244, 1);
+      color:white;
+      height: 58px;
+      width: 367px;
+      border-radius: 5px 0px 0px 5px;
+
+  }
