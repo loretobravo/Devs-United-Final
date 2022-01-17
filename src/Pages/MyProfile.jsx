@@ -11,11 +11,12 @@ const MyProfile = () => {
     
     return (
         <div>
-            
-            {/* <Link to="/">Back to Home</Link> */}
-            {/* <button onClick={logout}>Log out</button> */}
+            {tweets? (
             <MyTweets/>
+
+            ):(
             <MyFavs/>
+            )}
 
         </div>
          
@@ -23,3 +24,4 @@ const MyProfile = () => {
 }
 
 export default MyProfile
+

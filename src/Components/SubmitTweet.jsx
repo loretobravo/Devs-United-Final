@@ -15,7 +15,6 @@ const SubmitTweet = () => {
   });
 
 
-
   useEffect(() => {
     const desuscribir = firestore
       .collection("tweets")
@@ -49,7 +48,6 @@ const SubmitTweet = () => {
   };
 
 
-
   const createTweet = (e) => {
     e.preventDefault();
     // enviamos el tweet a la colección
@@ -58,10 +56,6 @@ const SubmitTweet = () => {
     .then(()=> console.log("creado exitosamente"))
     .catch (()=> console.log("algo salio mal"))
   };
-
-
-
-
   return (
     
       <div>
@@ -70,16 +64,13 @@ const SubmitTweet = () => {
             defaultValue={body.tweet}
             onChange={handleChange}
             placeholder="What´s happeing?"
-            name="tweet"
-           
+            name="tweet" 
          />
           <div>
             <button onClick={createTweet}>Send</button>
-
           </div>
         </form>
         <Tweets/>
-    
     </div>
   );
 };

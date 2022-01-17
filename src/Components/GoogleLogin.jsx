@@ -28,12 +28,20 @@ const GoogleLogin = () => {
       ) : (
         <div className="loginGoogle">
           <img src="./svgs/logo.svg" alt="logo" className="logo" />
-        <button className="loginbutton" onClick={loginGoogle}>
-          Sign in with google
-        </button>
+          <div className="loginGoogle2">
+          <h1 className="title"> WELCOME!</h1>
+          <p className="title2">Begin your journey to the Front End Developer World</p>
+        
+        <img className="loginbutton"src="./svgs/google.png" onClick={loginGoogle}/>
+        <p className="copyright">© 2021 Devs_United - <em>BETA</em></p>
+     
+        </div>
+       
         </div>
       )}
         </div>
+        
     );
 };
 export default GoogleLogin;
+
