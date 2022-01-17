@@ -15,7 +15,7 @@ import NavBar from "../Components/NavBar";
 return (
 <div>
   <NavBar/>
-  <GoogleLogin/>   
+  {/* <GoogleLogin/>    */}
 <SubmitTweet/> 
   </div>
 )};

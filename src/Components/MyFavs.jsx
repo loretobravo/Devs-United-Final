@@ -4,6 +4,7 @@ import {AppContext} from "../Context/AppContext";
 import Tweets from "./Tweets";
 import SubmitTweet from "./SubmitTweet";
 import { Navigate, Link } from "react-router-dom";
+import { auth,loginGoogle,logout} from '../Firebase';
 
 const MyFavs = () => {
 
@@ -64,6 +65,7 @@ const MyFavs = () => {
     <div>
          <Link to="/">Back to Home</Link>
         <Link to="/MyTweets">My Tweets</Link>
+        <button className="logoutbtn" onClick={logout}>Log out</button>
 
          {tweets.map((tweet) => {
         const newFavorite = tweet.likedBy.findIndex((liked)=> user.email === liked)

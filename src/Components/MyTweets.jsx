@@ -4,6 +4,7 @@ import {AppContext} from "../Context/AppContext";
 import Tweets from "./Tweets";
 import SubmitTweet from "./SubmitTweet";
 import { Navigate, Link } from "react-router-dom";
+import { auth,loginGoogle,logout} from '../Firebase';
 
 const MyTweets = () => {
 
@@ -64,6 +65,7 @@ const MyTweets = () => {
     <div>
          <Link to="/">Back to Home</Link>
         <Link to="/MyFavs">My Favs</Link>
+        <button className="logoutbtn" onClick={logout}>Log out</button>
          {tweets.map((tweet) => {
         {if (tweet.email === user.email){
       return (

@@ -20,10 +20,8 @@ const GoogleLogin = () => {
         <div>
             {user ? (
         
-          <div>
             <Home/>
-          </div>
-        
+          
       ) : (
         <div className="loginGoogle">
           <img src="./svgs/logo.svg" alt="logo" className="logo" />
