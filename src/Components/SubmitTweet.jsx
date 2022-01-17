@@ -2,7 +2,7 @@ import React, { useEffect, useState,useContext } from "react";
 import { firestore } from "../Firebase";
 import {AppContext} from "../Context/AppContext";
 import Tweets from "./Tweets";
-import Tweet from "./Tweet"
+import "./submittweet.css"
 
 const SubmitTweet = () => {
 
@@ -57,19 +57,17 @@ const SubmitTweet = () => {
     .catch (()=> console.log("algo salio mal"))
   };
   return (
-    
-      <div>
+          <div>
         <form>
           <textarea
             defaultValue={body.tweet}
             onChange={handleChange}
-            placeholder="What´s happeing?"
+            placeholder="What´s happening?"
             name="tweet" 
          />
-          <div>
-            <button onClick={createTweet}>Send</button>
-          </div>
-        </form>
+            <button className="postbtn" onClick={createTweet}>POST</button>
+            </form>
+      
         <Tweets/>
     </div>
   );

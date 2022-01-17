@@ -10,6 +10,7 @@ export const AppProvider = (props) => {
  
   const [ user, setUser] = useState(null);
   const [tweets, setTweets] = useState([]);
+  const [ isLoading, setIsLoading ] = useState(true);
 
 //   const deleteTweet = (id) => {
 //      firestore.doc(`tweets/${id}`)
@@ -63,8 +64,9 @@ export const AppProvider = (props) => {
       user, 
       setUser,
        tweets, 
-       setTweets, 
-       }}>
+       setTweets,
+       isLoading,
+       setIsLoading}}>
       {props.children}
     </AppContext.Provider>
   );

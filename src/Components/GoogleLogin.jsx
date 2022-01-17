@@ -3,6 +3,7 @@ import { Navigate, Link } from "react-router-dom";
 import { auth,loginGoogle,logout} from '../Firebase';
 import {AppContext} from "../Context/AppContext";
 import "./googleLogin.css"
+import {Home} from "../Pages/Home";
 
 
 const GoogleLogin = () => {
@@ -20,9 +21,7 @@ const GoogleLogin = () => {
             {user ? (
         
           <div>
-            <img src={user.photoURL} alt="" />
-            <p>¡Hola {user.displayName}!</p>
-            {/* <button onClick={logout}>Log out</button> */}
+            <Home/>
           </div>
         
       ) : (
