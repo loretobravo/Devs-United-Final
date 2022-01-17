@@ -30,7 +30,7 @@ const GoogleLogin = () => {
           <img src="./svgs/logo.svg" alt="logo" className="logo" />
           <div className="loginGoogle2">
           <h1 className="title"> WELCOME!</h1>
-          <p className="title2">Begin your journey to the Front End Developer World</p>
+          <p className="title2">Begin your journey to the Front End Development World</p>
         
         <img className="loginbutton"src="./svgs/google.png" onClick={loginGoogle}/>
         <p className="copyright">© 2021 Devs_United - <em>BETA</em></p>
