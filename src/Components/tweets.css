@@ -1,76 +1,84 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Press+Start+2P&display=swap');
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
-
-  .tweets{
-    background: rgba(47, 17, 45, 1);
-    width: 100vw;
-    height: 100vh;
-
-  }
-
-  .tweet{
-    display: flex;
-        flex-direction: column;
-        align-content: center; 
-        justify-content: space-between;
-        align-items: center;
-  }
-  .usertweet{
-    margin-top: 10px;
-    color: rgba(255, 255, 255, 1);
-    width:500px;
-    Height: 120px;
-    border-bottom: 1px solid rgba(145, 77, 139, 1);
-    font-size:12px;
-    font-family: 'Fira Code', monospace;
-  }
-.autor{
-    
-height:15%;
-font-size:8px;
-background: rgba(21, 7, 20, 1);
-color:rgba(145, 77, 139, 1);
-    font-family: 'Press Start 2P', cursive;
-    margin-top: 2%;
-    margin-left: 15%;
-    padding: 2px;
-    text-transform: uppercase;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-  .autorpic {
-      border-radius: 80%;
-      width: 56px;
-      height: 56px;
-      margin-right: 100%;
-      margin-top: -20px;
-  }
-  p{
-    margin-top: -20px;
-    margin-left: 15%;
-  }
-  .trash{
-    width: 15px;
-      height: 15px;  
-      cursor: pointer;
-      margin-left: 90%;
-  }
-  span{
-    margin-left: 15%;
-    color:rgba(245, 13, 90, 1);
-  }
-  .like{
-    width: 15px;
-    height: 15px;  
-    cursor: pointer;
-   
-  }
-  .dislike{
-    width: 15px;
-    height: 15px;  
-    cursor: pointer;
-    
-  }
+
+.tweets {
+  background: rgba(47, 17, 45, 1);
+  width: 100vw;
+  height: 100vh;
+
+}
+
+.tweet {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.usertweet {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 1);
+  width: 500px;
+  Height: 120px;
+  border-bottom: 1px solid rgba(145, 77, 139, 1);
+  font-size: 12px;
+  font-family: 'Fira Code', monospace;
+}
+
+.autor {
+
+  height: 15%;
+  font-size: 8px;
+  background: rgba(21, 7, 20, 1);
+  color: rgba(145, 77, 139, 1);
+  font-family: 'Press Start 2P', cursive;
+  margin-top: 2%;
+  margin-left: 15%;
+  padding: 2px;
+  text-transform: uppercase;
+}
+
+.autorpic {
+  border-radius: 80%;
+  width: 56px;
+  height: 56px;
+  margin-right: 100%;
+  margin-top: -20px;
+}
+
+p {
+  margin-top: -20px;
+  margin-left: 15%;
+}
+
+.trash {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  margin-left: 90%;
+}
+
+span {
+  margin-left: 15%;
+  color: rgba(245, 13, 90, 1);
+}
+
+.like {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+
+}
+
+.dislike {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+
+}

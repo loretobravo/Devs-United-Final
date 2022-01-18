@@ -1,29 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Press+Start+2P&display=swap');
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
-
-  nav{
-    
-background-color:rgba(37, 12, 35, 1);
-display:flex;
-flex-direction:raw;
-  justify-content: center;
-        align-items: center;
-        gap:6%;
-  }
-.user_picture{
-
-    border-radius: 80%;
-      width: 40px;
-      height: 40px;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.logo{
-width: 40px;
-      height: 40px;
+nav {
+
+  background-color: rgba(37, 12, 35, 1);
+  display: flex;
+  flex-direction: raw;
+  justify-content: center;
+  align-items: center;
+  gap: 6%;
+}
+
+.user_picture {
+
+  border-radius: 80%;
+  width: 40px;
+  height: 40px;
+}
+
+.logonav {
+  width: 40px;
+  height: 40px;
 
 }

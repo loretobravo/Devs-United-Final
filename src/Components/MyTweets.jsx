@@ -65,7 +65,7 @@ const MyTweets = () => {
     <div>
          <Link to="/">Back to Home</Link>
         <Link to="/MyFavs">My Favs</Link>
-        <button className="logoutbtn" onClick={logout}>Log out</button>
+        
          {tweets.map((tweet) => {
         {if (tweet.email === user.email){
       return (

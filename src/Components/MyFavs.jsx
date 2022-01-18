@@ -65,7 +65,7 @@ const MyFavs = () => {
     <div>
          <Link to="/">Back to Home</Link>
         <Link to="/MyTweets">My Tweets</Link>
-        <button className="logoutbtn" onClick={logout}>Log out</button>
+       
 
          {tweets.map((tweet) => {
         const newFavorite = tweet.likedBy.findIndex((liked)=> user.email === liked)

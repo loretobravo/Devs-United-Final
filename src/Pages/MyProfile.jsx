@@ -11,7 +11,6 @@ const MyProfile = () => {
     
     return (
         <div>
-        
             {tweets? (
                 
             <MyTweets/>

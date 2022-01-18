@@ -1,47 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Press+Start+2P&display=swap');
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
-
-
-  form{
-    background:rgba(21, 7, 20, 1);
-    color:rgba(255, 255, 255, 1);
-    display: flex;
-        flex-direction: column;
-        align-items: center;
-        align-content: center;
-  }
-textarea{
-margin-top: 10px;
-background: rgba(47, 17, 45, 1);
-color: rgba(145, 77, 139, 1);
-width:500px;
-Height: 113px;
-border:1px solid rgba(145, 77, 139, 1);
-border-radius: 5px;
-padding: 5px;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.postbtn{
-    background: #2F112D;
-    font-family: 'Press Start 2P', cursive;
-    border: none;
-    width:102px;
-    height:35px;
-    border:1px solid rgba(145, 77, 139, 1);
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 19%;
-    cursor: pointer;
+
+form {
+  background: rgba(21, 7, 20, 1);
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+textarea {
+  margin-top: 10px;
+  background: rgba(47, 17, 45, 1);
+  color: rgba(145, 77, 139, 1);
+  width: 500px;
+  Height: 113px;
+  border: 1px solid rgba(145, 77, 139, 1);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.postbtn {
+  background: #2F112D;
+  font-family: 'Press Start 2P', cursive;
+  border: none;
+  width: 102px;
+  height: 35px;
+  border: 1px solid rgba(145, 77, 139, 1);
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 19%;
+  cursor: pointer;
 
 
 }
 
-.postbtn:hover{
-    background-color: #800FFF;
+.postbtn:hover {
+  background-color: #800FFF;
 }

@@ -14,8 +14,9 @@ const NavBar = () => {
     return (
         <nav>
             <Link to="/MyProfile"><img className="user_picture" src={user.photoURL} alt="" /></Link>
-            <img className="logo"src="./svgs/logo small.svg"/>
+            <img className="logonav"src="./svgs/logo small.svg"/>
             <img className=""src="./svgs/title.svg"/>
+            <button className="logoutbtn" onClick={logout}>Log out</button>
             
             
         </nav>
