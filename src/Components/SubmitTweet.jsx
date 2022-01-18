@@ -6,7 +6,7 @@ import "./submittweet.css"
 
 const SubmitTweet = () => {
 
-  const {utweets,setTweets, user,setUser, deleteTweet, showLikes, likeTweet,dislikeTweet}= useContext(AppContext);
+  const {setTweets, user}= useContext(AppContext);
     const [body, setBody] = useState({
     tweet: "",
     autor: "",
@@ -30,7 +30,7 @@ const SubmitTweet = () => {
             image: doc.data().image
           };
         });
-        // console.log(tweets);
+        
         setTweets(tweets);
       });
     return () => desuscribir();
@@ -46,18 +46,18 @@ const SubmitTweet = () => {
       image: user.photoURL,
       likedBy: []
     };
-    // console.log(newTweet)
+    
     setBody(newTweet);
   };
 
 
   const createTweet = (e) => {
     e.preventDefault();
-    // enviamos el tweet a la colección
+   
     firestore.collection("tweets")
     .add(body)
-    .then(()=> console.log("creado exitosamente"))
-    .catch (()=> console.log("algo salio mal"))
+    .then(()=> console.log("created"))
+    .catch (()=> console.log("something went wrong"))
   };
   return (
           <div>

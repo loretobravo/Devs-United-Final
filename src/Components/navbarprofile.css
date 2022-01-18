@@ -14,6 +14,7 @@
     align-content: center;
     gap: 3%;
     height: 40px;
+    padding: 2%
 }
 
 .user {
@@ -76,6 +77,12 @@
     height: 30px;
     text-align: center;
     text-decoration: none;
+    cursor: pointer;
+}
+
+.posts:hover{
+    background-color: rgba(0, 218, 118, 1)
+
 }
 
 .favs{
@@ -90,5 +97,11 @@
     height: 30px;
     text-align: center;
     text-decoration: none;
+    cursor: pointer;
+
+}
+
+.favs:hover{
+    background-color: rgba(0, 218, 118, 1)
 
 }

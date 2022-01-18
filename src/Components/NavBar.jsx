@@ -1,24 +1,17 @@
-import React, { useEffect, useState,useContext } from "react";
-import { Navigate, Link } from "react-router-dom";
-import Tweets from "../Components/Tweets"
-import SubmitTweet from "../Components/SubmitTweet";
-import { auth,loginGoogle,logout} from '../Firebase';
+import React, {useContext } from "react";
+import {  Link } from "react-router-dom";
 import {AppContext} from "../Context/AppContext";
-import GoogleLogin from "../Components/GoogleLogin";
 import "./navbar.css"
 
 const NavBar = () => {
 
-    const {tweets,setTweets, user,setUser, deleteTweet, showLikes, likeTweet,dislikeTweet}= useContext(AppContext);
+    const {user}= useContext(AppContext);
 
     return (
         <nav className="navbar">
             <Link to="/MyProfile"><img className="user_picture" src={user.photoURL} alt="" /></Link>
             <img className="logonav"src="./svgs/logo small.svg"/>
-            <img className=""src="./svgs/title.svg"/>
-           
-            
-            
+            <img className=""src="./svgs/title.svg"/>   
         </nav>
     )
 }

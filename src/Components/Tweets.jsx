@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useContext } from "react";
+import React, {useContext } from "react";
 import { firestore } from "../Firebase";
 import {AppContext} from "../Context/AppContext";
 import "./tweets.css"
@@ -6,15 +6,14 @@ import "./tweets.css"
 
 const Tweets = () => {
 
-  const {tweets,setTweets, user,setUser}= useContext(AppContext);
+  const {tweets,user}= useContext(AppContext);
 
   const deleteTweet = (id) => {
-    // borramos el tweet en firebase
-    // console.log(id)
+   
      firestore.doc(`tweets/${id}`)
      .delete()
-     .then(()=> console.log("borrado exitosamente"))
-     .catch (()=> console.log("algo salio mal"))
+     .then(()=> console.log("deleted"))
+     .catch (()=> console.log("something went wrong"))
    };
 
 
@@ -23,8 +22,8 @@ const Tweets = () => {
 
      firestore.doc(`tweets/${tweet.id}`)
      .update({ likedBy: newLikedBy })
-     .then(()=> console.log("exito"))
-     .catch (()=> console.log("algo salio mal"))
+     .then(()=> console.log("success"))
+     .catch (()=> console.log("something went wrong"))
    };
 
 
@@ -33,8 +32,8 @@ const Tweets = () => {
 
      firestore.doc(`tweets/${tweet.id}`)
      .update({ likedBy: newLikedBy })
-     .then(()=> console.log("exito"))
-     .catch (()=> console.log("algo salio mal"))
+     .then(()=> console.log("success"))
+     .catch (()=> console.log("something went wrong"))
    };
 
 

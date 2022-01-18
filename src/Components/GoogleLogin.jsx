@@ -1,6 +1,5 @@
 import React, {useContext, useEffect} from "react";
-import { Navigate, Link } from "react-router-dom";
-import { auth,loginGoogle,logout} from '../Firebase';
+import { auth,loginGoogle} from '../Firebase';
 import {AppContext} from "../Context/AppContext";
 import "./googleLogin.css"
 import {Home} from "../Pages/Home";

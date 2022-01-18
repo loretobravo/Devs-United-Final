@@ -1,24 +1,18 @@
-import React, { useEffect, useState,useContext } from "react";
+import React, {useContext } from "react";
 import { firestore } from "../Firebase";
 import {AppContext} from "../Context/AppContext";
-import Tweets from "./Tweets";
-import SubmitTweet from "./SubmitTweet";
-import { Navigate, Link } from "react-router-dom";
-import { auth,loginGoogle,logout} from '../Firebase';
 import NavBarProfile from "../Components/NavBarProfile";
 import "./mytweets.css"
 
 const MyTweets = () => {
 
-    const {tweets,setTweets, user,setUser}= useContext(AppContext);
+    const {tweets,user}= useContext(AppContext);
 
   const deleteTweet = (id) => {
-    // borramos el tweet en firebase
-    // console.log(id)
      firestore.doc(`tweets/${id}`)
      .delete()
-     .then(()=> console.log("borrado exitosamente"))
-     .catch (()=> console.log("algo salio mal"))
+     .then(()=> console.log("deleted"))
+     .catch (()=> console.log("something went wrong"))
    };
 
 
@@ -27,8 +21,8 @@ const MyTweets = () => {
 
      firestore.doc(`tweets/${tweet.id}`)
      .update({ likedBy: newLikedBy })
-     .then(()=> console.log("exito"))
-     .catch (()=> console.log("algo salio mal"))
+     .then(()=> console.log("success"))
+     .catch (()=> console.log("something went wrong"))
    };
 
 
@@ -37,8 +31,8 @@ const MyTweets = () => {
 
      firestore.doc(`tweets/${tweet.id}`)
      .update({ likedBy: newLikedBy })
-     .then(()=> console.log("exito"))
-     .catch (()=> console.log("algo salio mal"))
+     .then(()=> console.log("success"))
+     .catch (()=> console.log("something went wrong"))
    };
 
 

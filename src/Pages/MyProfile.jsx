@@ -1,22 +1,17 @@
-import React, { useEffect, useState,useContext } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import React, { useContext } from "react";
 import MyFavs from '../Components/MyFavs';
 import MyTweets from '../Components/MyTweets';
-import { auth,loginGoogle,logout} from '../Firebase';
 import {AppContext} from "../Context/AppContext";
-import NavBarProfile from "../Components/NavBarProfile";
+
 
 const MyProfile = () => {
-    const {tweets,setTweets, user,setUser, deleteTweet, showLikes, likeTweet,dislikeTweet}= useContext(AppContext);
+    const {tweets}= useContext(AppContext);
 
     
     return (
-        <div>
-           
-            {tweets? (
-                
-            <MyTweets/>
-            
+        <div>  
+            {tweets? (     
+            <MyTweets/>  
 
             ):(
             <MyFavs/>

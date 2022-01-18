@@ -1,15 +1,12 @@
-import React, { useEffect, useState,useContext } from "react";
-import { Navigate, Link } from "react-router-dom";
-import Tweets from "../Components/Tweets"
-import SubmitTweet from "../Components/SubmitTweet";
-import { auth,loginGoogle,logout} from '../Firebase';
+import React, { useContext } from "react";
+import {  Link } from "react-router-dom";
+import { logout} from '../Firebase';
 import {AppContext} from "../Context/AppContext";
-import GoogleLogin from "../Components/GoogleLogin";
 import "./navbarprofile.css"
 
 const NavBarProfile = () => {
 
-    const {tweets,setTweets, user,setUser, deleteTweet, showLikes, likeTweet,dislikeTweet}= useContext(AppContext);
+    const {user}= useContext(AppContext);
 
     return (
         <header>
@@ -23,8 +20,8 @@ const NavBarProfile = () => {
             <div className="autorname">{user.displayName}</div>
             </div>
             <div className="postfavs">
-            <Link to="/MyTweets"><div className="posts">post</div></Link>
-                <Link to="/MyFavs"><div className="favs">favorites</div></Link>
+            <Link to="/MyTweets"><button className="posts">post</button></Link>
+                <Link to="/MyFavs"><button className="favs">favorites</button></Link>
             </div>
             
         </header>
