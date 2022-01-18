@@ -69,14 +69,11 @@ const Tweets = () => {
           return (
                  <div className="tweet">     
             <div className= "usertweet"key={tweet.id}>
-            <span className="autor">{tweet.autor}</span>
-            <img className="autorpic" src={user.photoURL} alt="" />
+            <span className="autor">{tweet.autor}</span>{user !== null && user.email === tweet.email &&
+              <img className="trash"src="./svgs/trash.svg" onClick={() => deleteTweet(tweet.id)}/>} 
+            <img className="autorpic" src={tweet.image} alt="" />
               <p>{tweet.tweet}</p>
-              <img className="trash"src="./svgs/trash.svg" onClick={() => deleteTweet(tweet.id)}/>
-          
-              <span> {showLikes(tweet)} {tweet.likedBy.length}</span>
-             
-
+              <span className="liked"> {showLikes(tweet)} {tweet.likedBy.length}</span>
             </div>
         </div>
           )

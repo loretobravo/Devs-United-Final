@@ -11,7 +11,8 @@ const SubmitTweet = () => {
     tweet: "",
     autor: "",
     id: "",
-    mail: ""
+    mail: "",
+    image: "",
   });
 
 
@@ -25,7 +26,8 @@ const SubmitTweet = () => {
             autor: doc.data().autor,
             id: doc.id,
             email: doc.data().email,      
-            likedBy: doc.data().likedBy
+            likedBy: doc.data().likedBy,
+            image: doc.data().image
           };
         });
         // console.log(tweets);
@@ -41,6 +43,7 @@ const SubmitTweet = () => {
       tweet: e.target.value,
       email: user.email,
       autor: user.displayName,
+      image: user.photoURL,
       likedBy: []
     };
     // console.log(newTweet)

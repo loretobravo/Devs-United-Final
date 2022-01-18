@@ -12,11 +12,11 @@ const NavBar = () => {
     const {tweets,setTweets, user,setUser, deleteTweet, showLikes, likeTweet,dislikeTweet}= useContext(AppContext);
 
     return (
-        <nav>
+        <nav className="navbar">
             <Link to="/MyProfile"><img className="user_picture" src={user.photoURL} alt="" /></Link>
             <img className="logonav"src="./svgs/logo small.svg"/>
             <img className=""src="./svgs/title.svg"/>
-            <button className="logoutbtn" onClick={logout}>Log out</button>
+           
             
             
         </nav>

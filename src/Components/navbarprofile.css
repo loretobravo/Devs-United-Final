@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Press+Start+2P&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.navprofile {
+    background-color: rgba(37, 12, 35, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 3%;
+    height: 40px;
+}
+
+.user {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-size: 7px;
+    text-transform: uppercase;
+    margin-right: 8%;
+}
+
+
+
+.bigprofile {
+    background: rgba(21, 7, 20, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 280px;
+}
+
+.userpicture {
+    border-radius: 80%;
+    width: 140px;
+    height: 140px;
+}
+
+.autorname {
+
+    font-size: 12px;
+    background: rgba(128, 15, 255, 1);
+    color: rgba(37, 12, 35, 1);
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+    height: 20px;
+    padding-top: 0.3%;
+}
+
+.postfavs{
+    background: rgba(21, 7, 20, 1);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    
+
+}
+
+.posts{
+
+    background-color: rgba(96, 38, 91, 1);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    text-transform: uppercase;
+    color:rgba(37, 12, 35, 1);
+    padding: 2%;
+    width: 300px;
+    height: 30px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.favs{
+
+    background-color:  #2E132C;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: rgba(96, 38, 91, 1);
+    padding: 2%;
+    width: 300px;
+    height: 30px;
+    text-align: center;
+    text-decoration: none;
+
+}

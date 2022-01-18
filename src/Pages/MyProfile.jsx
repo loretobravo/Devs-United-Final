@@ -4,6 +4,7 @@ import MyFavs from '../Components/MyFavs';
 import MyTweets from '../Components/MyTweets';
 import { auth,loginGoogle,logout} from '../Firebase';
 import {AppContext} from "../Context/AppContext";
+import NavBarProfile from "../Components/NavBarProfile";
 
 const MyProfile = () => {
     const {tweets,setTweets, user,setUser, deleteTweet, showLikes, likeTweet,dislikeTweet}= useContext(AppContext);
@@ -11,6 +12,7 @@ const MyProfile = () => {
     
     return (
         <div>
+           
             {tweets? (
                 
             <MyTweets/>

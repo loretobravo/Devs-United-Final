@@ -5,6 +5,8 @@ import Tweets from "./Tweets";
 import SubmitTweet from "./SubmitTweet";
 import { Navigate, Link } from "react-router-dom";
 import { auth,loginGoogle,logout} from '../Firebase';
+import NavBarProfile from "../Components/NavBarProfile";
+import "./mytweets.css"
 
 const MyTweets = () => {
 
@@ -46,14 +48,14 @@ const MyTweets = () => {
        if (isLiked < 0){
          return (
            <>
-            <button onClick={() => likeTweet(tweet)}>Like</button>
+            <img className="like"src="./svgs/whiteheart.svg" onClick={() => likeTweet(tweet)}/>
             </>
          )
        }
        else {
          return (
            <>
- <button onClick={() => dislikeTweet(tweet)}>disLike</button>
+           <img className="dislike"src="./svgs/redheart.svg" onClick={() => dislikeTweet(tweet)}/>
            </>
          )
        }
@@ -62,23 +64,21 @@ const MyTweets = () => {
 
    }
    return (
-    <div>
-         <Link to="/">Back to Home</Link>
-        <Link to="/MyFavs">My Favs</Link>
+    <div className="tweets">
+       <NavBarProfile/>
         
          {tweets.map((tweet) => {
         {if (tweet.email === user.email){
       return (
-             <div>       
-        <div key={tweet.id}>
-          <h2>{tweet.tweet}</h2>
-          <h4>{tweet.email}</h4>
-          <h4>by: {tweet.autor}</h4>
-          <h4>{tweet.likedBy.length}</h4>
-       
+             <div className="tweet">       
+        <div className="usertweet" key={tweet.id}>
+        <span className="autor">{tweet.autor}</span>{user !== null && user.email === tweet.email &&
+              <img className="trash"src="./svgs/trash.svg" onClick={() => deleteTweet(tweet.id)}/>} 
+              <img className="autorpic" src={tweet.image} alt="" />
+          <p>{tweet.tweet}</p>
+          <span className="liked"> {showLikes(tweet)} {tweet.likedBy.length}</span>
         </div>
-    <button onClick={() => deleteTweet(tweet.id)}>Delete</button>
-{showLikes(tweet)}
+  
     </div>
       )}
 
@@ -87,9 +87,5 @@ const MyTweets = () => {
   </div>
    )        
 } 
-
-
-
-
 
 export default MyTweets
