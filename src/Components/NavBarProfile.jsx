@@ -20,7 +20,7 @@ const NavBarProfile = () => {
             <div className="autorname">{user.displayName}</div>
             </div>
             <div className="postfavs">
-            <Link to="/MyTweets"><button className="posts">post</button></Link>
+                <Link to="/MyTweets"><button className="posts">post</button></Link>
                 <Link to="/MyFavs"><button className="favs">favorites</button></Link>
             </div>
             

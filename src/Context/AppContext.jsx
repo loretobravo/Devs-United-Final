@@ -1,6 +1,4 @@
 import React, { createContext, useState } from "react";
-import { firestore } from "../Firebase";
-import { confirmAlert } from 'react-confirm-alert';
 
 
 export const AppContext = createContext();
@@ -8,6 +6,7 @@ export const AppContext = createContext();
 export const AppProvider = (props) => {
 
  
+
   const [ user, setUser] = useState(null);
   const [tweets, setTweets] = useState([]);
   const [ isLoading, setIsLoading ] = useState(true);
@@ -66,7 +65,7 @@ export const AppProvider = (props) => {
        tweets, 
        setTweets,
        isLoading,
-       setIsLoading}}>
+       setIsLoading,}}>
       {props.children}
     </AppContext.Provider>
   );

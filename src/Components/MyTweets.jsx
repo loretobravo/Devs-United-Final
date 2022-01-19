@@ -64,8 +64,8 @@ const MyTweets = () => {
          {tweets.map((tweet) => {
         {if (tweet.email === user.email){
       return (
-             <div className="tweet">       
-        <div className="usertweet" key={tweet.id}>
+             <div className="tweet"key={tweet.id}>       
+        <div className="usertweet" >
         <span className="autor">{tweet.autor}</span>{user !== null && user.email === tweet.email &&
               <img className="trash"src="./svgs/trash.svg" onClick={() => deleteTweet(tweet.id)}/>} 
               <img className="autorpic" src={tweet.image} alt="" />

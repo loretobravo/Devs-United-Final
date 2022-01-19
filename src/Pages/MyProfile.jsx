@@ -10,13 +10,13 @@ const MyProfile = () => {
     
     return (
         <div>  
-            {tweets? (     
+            {/* {tweets? (      */}
             <MyTweets/>  
 
-            ):(
+            {/* ):( */}
             <MyFavs/>
             
-            )}
+            {/* )} */}
 
         </div>
          

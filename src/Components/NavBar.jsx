@@ -1,7 +1,8 @@
 import React, {useContext } from "react";
 import {  Link } from "react-router-dom";
 import {AppContext} from "../Context/AppContext";
-import "./navbar.css"
+import "./navbar.css";
+
 
 const NavBar = () => {
 
@@ -13,6 +14,7 @@ const NavBar = () => {
             <img className="logonav"src="./svgs/logo small.svg"/>
             <img className=""src="./svgs/title.svg"/>   
         </nav>
+ 
     )
 }
 
