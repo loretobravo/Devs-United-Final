@@ -18,9 +18,9 @@ const Loading = () => {
               fill="none"
               fill-rule="evenodd"
               transform="translate(1 1)"
-              stroke-width="2"
+              strokeWidth="2"
             >
-              <circle cx="22" cy="22" r="6" stroke-opacity="0">
+              <circle cx="22" cy="22" r="6" strokeOpacity="0">
                 <animate
                   attributeName="r"
                   begin="1.5s"
@@ -30,7 +30,7 @@ const Loading = () => {
                   repeatCount="indefinite"
                 />
                 <animate
-                  attributeName="stroke-opacity"
+                  attributeName="strokeOpacity"
                   begin="1.5s"
                   dur="3s"
                   values="1;0"
@@ -38,7 +38,7 @@ const Loading = () => {
                   repeatCount="indefinite"
                 />
                 <animate
-                  attributeName="stroke-width"
+                  attributeName="strokeWidth"
                   begin="1.5s"
                   dur="3s"
                   values="2;0"
@@ -46,7 +46,7 @@ const Loading = () => {
                   repeatCount="indefinite"
                 />
               </circle>
-              <circle cx="22" cy="22" r="6" stroke-opacity="0">
+              <circle cx="22" cy="22" r="6" strokeOpacity="0">
                 <animate
                   attributeName="r"
                   begin="3s"
@@ -56,7 +56,7 @@ const Loading = () => {
                   repeatCount="indefinite"
                 />
                 <animate
-                  attributeName="stroke-opacity"
+                  attributeName="strokeOpacity"
                   begin="3s"
                   dur="3s"
                   values="1;0"
@@ -64,7 +64,7 @@ const Loading = () => {
                   repeatCount="indefinite"
                 />
                 <animate
-                  attributeName="stroke-width"
+                  attributeName="strokeWidth"
                   begin="3s"
                   dur="3s"
                   values="2;0"
