@@ -6,7 +6,7 @@ import "./submittweet.css"
 
 const SubmitTweet = () => {
 
-  const {setTweets, user}= useContext(AppContext);
+  const {setTweets, user, setIsLoading}= useContext(AppContext);
     const [body, setBody] = useState({
     tweet: "",
     autor: "",
@@ -32,6 +32,8 @@ const SubmitTweet = () => {
         });
         
         setTweets(tweets);
+        setIsLoading(false);
+       
       });
     return () => desuscribir();
   }, []);
@@ -61,6 +63,7 @@ const SubmitTweet = () => {
   };
   return (
           <div>
+            
         <form>
           <textarea
             defaultValue={body.tweet}

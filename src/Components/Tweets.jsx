@@ -1,21 +1,38 @@
 import React, {useContext } from "react";
 import { firestore } from "../Firebase";
 import {AppContext} from "../Context/AppContext";
+import { confirmAlert } from 'react-confirm-alert';
+import './react-confirm-alert.css'; 
 import "./tweets.css"
+import Loading from "./Loading";
 
 
 const Tweets = () => {
 
-  const {tweets,user}= useContext(AppContext);
+  const {tweets,user, isLoading, setIsLoading}= useContext(AppContext);
 
-  const deleteTweet = (id) => {
-   
-     firestore.doc(`tweets/${id}`)
-     .delete()
-     .then(()=> console.log("deleted"))
-     .catch (()=> console.log("something went wrong"))
-   };
+    const deleteTweet = (id) => {
+     
+      confirmAlert({
+        title: 'Confirm Delete',
+        message: 'Are you sure you want to delete this post?',
+        buttons: [
+          {
+            label: 'Yes',
+            onClick: () => {
+              firestore.doc(`tweets/${id}`)
+              .delete()
+              .then(()=> console.log("deleted"))
+              .catch (()=> console.log("something went wrong"))
+            }
+          },
+          {
+            label: 'No'
+          }
+        ]
+      });
 
+    };
 
    const likeTweet = (tweet) =>{
     let newLikedBy = [...tweet.likedBy, user.email];
@@ -61,9 +78,12 @@ const Tweets = () => {
      }
 
    }
- 
+   if (isLoading) return <Loading/>
     return (
         <div className="tweets">
+
+       
+          
             {tweets.map((tweet) => {
           return (
                  <div className="tweet">     
@@ -78,7 +98,10 @@ const Tweets = () => {
           )
             })}
             </div>
-    )};
+            
+    )
+   
+  };
           
 
 export default Tweets;

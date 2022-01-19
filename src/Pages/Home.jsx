@@ -4,6 +4,7 @@ import SubmitTweet from "../Components/SubmitTweet";
 import {AppContext} from "../Context/AppContext";
 import NavBar from "../Components/NavBar";
 
+
  export const Home = () => {
   const {user}= useContext(AppContext);
 
@@ -13,5 +14,6 @@ return (
 <div>
   <NavBar/>
 <SubmitTweet/> 
+
   </div>
 )};
