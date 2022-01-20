@@ -48,7 +48,7 @@ const SubmitTweet = () => {
           <textarea
             value={body.tweet}
             onChange={handleChange}
-            placeholder="What´s happening?"
+            placeholder="How U doin´?"
             name="tweet" 
          />
             <button className="postbtn" onClick={createTweet}>POST</button>
