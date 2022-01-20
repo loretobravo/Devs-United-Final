@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useContext } from "react";
+import React, {  useState,useContext } from "react";
 import { firestore } from "../Firebase";
 import {AppContext} from "../Context/AppContext";
 import Tweets from "./Tweets";
@@ -15,29 +15,6 @@ const SubmitTweet = () => {
     mail: "",
     image: "",
   });
-
-
-  // useEffect(() => {
-  //   const desuscribir = firestore
-  //     .collection("tweets")
-  //     .onSnapshot((snapshot) => {
-  //       const tweets = snapshot.docs.map((doc) => {
-  //         return {
-  //           tweet: doc.data().tweet,
-  //           autor: doc.data().autor,
-  //           id: doc.id,
-  //           email: doc.data().email,      
-  //           likedBy: doc.data().likedBy,
-  //           image: doc.data().image
-  //         };
-  //       });
-        
-  //       setTweets(tweets);
-  //       setIsLoading(false);
-       
-  //     });
-  //   return () => desuscribir();
-  // }, []);
 
 
     const handleChange = (e) => {
