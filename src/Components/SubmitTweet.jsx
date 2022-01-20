@@ -6,7 +6,8 @@ import "./submittweet.css"
 
 const SubmitTweet = () => {
 
-  const {setTweets, user, setIsLoading}= useContext(AppContext);
+  const { user}= useContext(AppContext);
+
     const [body, setBody] = useState({
     tweet: "",
     autor: "",
@@ -16,27 +17,27 @@ const SubmitTweet = () => {
   });
 
 
-  useEffect(() => {
-    const desuscribir = firestore
-      .collection("tweets")
-      .onSnapshot((snapshot) => {
-        const tweets = snapshot.docs.map((doc) => {
-          return {
-            tweet: doc.data().tweet,
-            autor: doc.data().autor,
-            id: doc.id,
-            email: doc.data().email,      
-            likedBy: doc.data().likedBy,
-            image: doc.data().image
-          };
-        });
+  // useEffect(() => {
+  //   const desuscribir = firestore
+  //     .collection("tweets")
+  //     .onSnapshot((snapshot) => {
+  //       const tweets = snapshot.docs.map((doc) => {
+  //         return {
+  //           tweet: doc.data().tweet,
+  //           autor: doc.data().autor,
+  //           id: doc.id,
+  //           email: doc.data().email,      
+  //           likedBy: doc.data().likedBy,
+  //           image: doc.data().image
+  //         };
+  //       });
         
-        setTweets(tweets);
-        setIsLoading(false);
+  //       setTweets(tweets);
+  //       setIsLoading(false);
        
-      });
-    return () => desuscribir();
-  }, []);
+  //     });
+  //   return () => desuscribir();
+  // }, []);
 
 
     const handleChange = (e) => {
@@ -60,13 +61,15 @@ const SubmitTweet = () => {
     .add(body)
     .then(()=> console.log("created"))
     .catch (()=> console.log("something went wrong"))
+    setBody({...body,
+      tweet: ""})
   };
   return (
           <div>
             
         <form>
           <textarea
-            defaultValue={body.tweet}
+            value={body.tweet}
             onChange={handleChange}
             placeholder="What´s happening?"
             name="tweet" 
